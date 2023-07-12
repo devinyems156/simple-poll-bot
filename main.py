@@ -1,7 +1,6 @@
 import discord
 import dotenv
 import os
-
 import emoji
 
 bot = discord.Bot()
@@ -127,4 +126,5 @@ async def on_raw_reaction_add(payload: discord.RawReactionActionEvent):
         member = bot.get_guild(payload.guild_id).get_member(payload.user_id)
         await message.remove_reaction(payload.emoji, member)
 
-bot.run(token)
+if __name__ == '__main__':
+    bot.run(token)
